@@ -1,0 +1,50 @@
+﻿movie_name;release_date;movie_type;director;music_composer;money_spent;income
+The Godfather;1972.03.24 0:00;Crime;Francis Ford Coppola;Nino Rota;6000000;250000000
+Star Wars: A New Hope;1977.05.25 0:00;Science Fiction;George Lucas;John Williams;11000000;775000000
+Jaws;1975.06.20 0:00;Thriller;Steven Spielberg;John Williams;9000000;475000000
+Rocky;1976.12.03 0:00;Sports Drama;John G. Avildsen;Bill Conti;1000000;225000000
+The Dark Knight;2008.07.18 0:00;Action;Christopher Nolan;Hans Zimmer;185000000;1005000000
+Inception;2010.07.16 0:00;Science Fiction;Christopher Nolan;Hans Zimmer;160000000;835000000
+Titanic;1997.12.19 0:00;Romance;James Cameron;James Horner;200000000;2200000000
+Avatar;2009.12.18 0:00;Science Fiction;James Cameron;James Horner;237000000;2920000000
+Pulp Fiction;1994.10.14 0:00;Crime;Quentin Tarantino;various;8000000;213000000
+Forrest Gump;1994.07.06 0:00;Drama;Robert Zemeckis;Alan Silvestri;55000000;678000000
+The Shawshank Redemption;1994.09.23 0:00;Drama;Frank Darabont;Thomas Newman;25000000;73000000
+The Matrix;1999.03.31 0:00;Science Fiction;Lana & Lilly Wachowski;Don Davis;63000000;466000000
+Gladiator;2000.05.05 0:00;Historical Drama;Ridley Scott;Hans Zimmer;103000000;460000000
+Jurassic Park;1993.06.11 0:00;Science Fiction;Steven Spielberg;John Williams;63000000;1045000000
+The Lion King;1994.06.24 0:00;Animation;Roger Allers & Rob Minkoff;Hans Zimmer;45000000;968000000
+Back to the Future;1985.07.03 0:00;Science Fiction;Robert Zemeckis;Alan Silvestri;19000000;381000000
+Alien;1979.05.25 0:00;Horror;Ridley Scott;Jerry Goldsmith;11000000;106000000
+Terminator 2: Judgment Day;1991.07.03 0:00;Science Fiction;James Cameron;Brad Fiedel;100000000;520000000
+E.T. the Extra-Terrestrial;1982.06.11 0:00;Science Fiction;Steven Spielberg;John Williams;10500000;792000000
+Indiana Jones and the Raiders of the Lost Ark;1981.06.12 0:00;Action;Steven Spielberg;John Williams;20000000;390000000
+The Exorcist;1973.12.26 0:00;Horror;William Friedkin;Mike Oldfield;12000000;441000000
+Saving Private Ryan;1998.07.24 0:00;War;Steven Spielberg;John Williams;70000000;485000000
+Braveheart;1995.05.24 0:00;Historical Drama;Mel Gibson;James Horner;72000000;210000000
+The Silence of the Lambs;1991.02.14 0:00;Thriller;Jonathan Demme;Howard Shore;19000000;272000000
+Goodfellas;1990.09.19 0:00;Crime;Martin Scorsese;various;25000000;47000000
+The Lord of the Rings: The Fellowship of the Ring;2001.12.19 0:00;Fantasy;Peter Jackson;Howard Shore;93000000;897000000
+The Lord of the Rings: The Two Towers;2002.12.18 0:00;Fantasy;Peter Jackson;Howard Shore;94000000;947000000
+The Lord of the Rings: The Return of the King;2003.12.17 0:00;Fantasy;Peter Jackson;Howard Shore;94000000;1142000000
+Casablanca (Re-release);1992.09.18 0:00;Romance;Michael Curtiz;Max Steiner;3000000;65000000
+Schindler's List;1993.12.15 0:00;Historical Drama;Steven Spielberg;John Williams;22000000;322000000
+The Departed;2006.10.06 0:00;Crime;Martin Scorsese;Howard Shore;90000000;291000000
+The Revenant;2015.12.25 0:00;Adventure;Alejandro G. IĂ±Ăˇrritu;Ryuichi Sakamoto;135000000;533000000
+La La Land;2016.12.09 0:00;Musical;Damien Chazelle;Justin Hurwitz;30000000;447000000
+Whiplash;2014.10.10 0:00;Drama;Damien Chazelle;Justin Hurwitz;3300000;49000000
+Black Panther;2018.02.16 0:00;Superhero;Ryan Coogler;Ludwig GĂ¶ransson;200000000;1347000000
+The Avengers;2012.05.04 0:00;Superhero;Joss Whedon;Alan Silvestri;220000000;1519000000
+Avengers: Endgame;2019.04.26 0:00;Superhero;Anthony & Joe Russo;Alan Silvestri;356000000;2798000000
+Mad Max: Fury Road;2015.05.15 0:00;Action;George Miller;Junkie XL;150000000;380000000
+The Social Network;2010.10.01 0:00;Drama;David Fincher;Trent Reznor & Atticus Ross;40000000;224000000
+Interstellar;2014.11.07 0:00;Science Fiction;Christopher Nolan;Hans Zimmer;165000000;681000000
+Dune;2021.10.22 0:00;Science Fiction;Denis Villeneuve;Hans Zimmer;165000000;402000000
+Oppenheimer;2023.07.21 0:00;Historical Drama;Christopher Nolan;Ludwig GĂ¶ransson;100000000;960000000
+Barbie;2023.07.21 0:00;Comedy-Fantasy;Greta Gerwig;Mark Ronson;145000000;1448000000
+The Hunger Games;2012.03.23 0:00;Action;Gary Ross;James Newton Howard;78000000;694000000
+Frozen;2013.11.27 0:00;Animation;Chris Buck & Jennifer Lee;Christophe Beck;150000000;1290000000
+The Incredibles;2004.11.05 0:00;Animation;Brad Bird;Michael Giacchino;92000000;631000000
+Toy Story;1995.11.22 0:00;Animation;John Lasseter;Randy Newman;30000000;394000000
+Spider-Man 2;2004.06.30 0:00;Superhero;Sam Raimi;Danny Elfman;200000000;789000000
+The Terminator;1984.10.26 0:00;Science Fiction;James Cameron;Brad Fiedel;6400000;78000000
