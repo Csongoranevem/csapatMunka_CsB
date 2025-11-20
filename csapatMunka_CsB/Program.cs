@@ -73,45 +73,45 @@ namespace csapatMunka_CsB
                 switch (genre)
                 {
                     case "Action":
-                        //movieGenres.Add(new ActionMovie(...));
+                        //movieGenres.Add(new Action(...));
                         break;
                     case "Drama":
-                        //movieGenres.Add(new DramaMovie(...));
+                        //movieGenres.Add(new Drama(...));
                         break;
                     case "Comedy":
-                        //movieGenres.Add(new ComedyMovie(...));
+                        //movieGenres.Add(new Comedy(...));
                         break;
 
                     case "Science Fiction":
-                        //movieGenres.Add(new ScienceFictionMovie(...));
+                        //movieGenres.Add(new ScienceFiction(...));
                         break;
 
                     case "Horror":
-                        //movieGenres.Add(new HorrorMovie(...));
+                        //movieGenres.Add(new Horror(...));
                         break;
                     case "Romance":
-                        //movieGenres.Add(new RomanceMovie(...));
+                        //movieGenres.Add(new Romance(...));
                         break;
                     case "Thriller":
-                        //movieGenres.Add(new ThrillerMovie(...));
+                        //movieGenres.Add(new Thriller(...));
                         break;
                     case "Crime":
-                        //movieGenres.Add(new CrimeMovie(...));
+                        //movieGenres.Add(new Crime(...));
                         break;
                     case "Fantasy":
-                        //movieGenres.Add(new FantasyMovie(...));
+                        //movieGenres.Add(new Fantasy(...));
                         break;
                     case "Historical Drama":
-                        //movieGenres.Add(new HistoricalDramaMovie(...));
+                        //movieGenres.Add(new HistoricalDrama(...));
                         break;
                     case "Animation":
-                        //movieGenres.Add(new AnimationMovie(...));
+                        //movieGenres.Add(new Animation(...));
                         break;
                     case "Superhero":
-                        //movieGenres.Add(new SuperheroMovie(...));
+                        //movieGenres.Add(new Superhero(...));
                         break;
                     case "Musical":
-                        //movieGenres.Add(new MusicalMovie(...));
+                        //movieGenres.Add(new Musical(...));
                         break;
 
                     default:

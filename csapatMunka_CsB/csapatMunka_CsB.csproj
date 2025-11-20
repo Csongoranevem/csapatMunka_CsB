@@ -52,6 +52,11 @@
     <Compile Include="Historical_drama.cs" />
     <Compile Include="Horror.cs" />
     <Compile Include="Romance.cs" />
+<<<<<<< HEAD
+    <Compile Include="Science_fiction.vs" />
+    <Compile Include="Sportsdrama.cs" />
+=======
+>>>>>>> 4a6f626cacd473517fc40451bade265f16332284
     <Compile Include="Superhero.cs" />
     <Compile Include="Thriller.cs" />
     <Compile Include="War.cs" />
