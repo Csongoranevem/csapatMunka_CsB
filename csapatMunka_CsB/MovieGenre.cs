@@ -8,12 +8,11 @@ namespace csapatMunka_CsB
 {
     public abstract class MovieGenre: Movie
     {
-        public MovieGenre(string name, string theme, string tone, string targetAudience)
+     
+        public MovieGenre(string movie_Name, DateTime release_Date, string movie_Type, string director, string music_Composer, decimal money_Spent, decimal income, string name, string theme, string tone, string targetAudience) 
+            : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income)
         {
-            Name = name;
-            Theme = theme;
-            Tone = tone;
-            TargetAudience = targetAudience;
+            
         }
 
         public string Name { get; set; }
@@ -22,14 +21,6 @@ namespace csapatMunka_CsB
         public string TargetAudience { get; set; }
 
 
-        public MovieGenre(string movie_Name, DateTime release_Date, string movie_Type, string director, string music_Composer, decimal money_Spent, decimal income,
-            string gName, string theme, string tone, string targetAudience)
-            : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income)
-        {
-            this.gName = gName;
-            Theme = theme;
-            Tone = tone;
-            TargetAudience = targetAudience;
-        }
+       
     }
 }
