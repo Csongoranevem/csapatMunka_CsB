@@ -43,7 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Movie.cs" />
+	<Compile Include="Action.cs"/>
+	<Compile Include="Adventure.cs"/>
+	<Compile Include="Animation.cs" />
+	  <Compile Include="Crime.cs" />
+	  <Compile Include="Drama.cs" />
+	  <Compile Include="Fantasy.cs" />
+	  <Compile Include="Historical_drama.cs" />
+	  <Compile Include="Horror.cs" />
+	  <Compile Include="Romance.cs" />
+	  <Compile Include="Science_fiction.vs" />
+	  <Compile Include="Sportsdrama.cs" />
+	  <Compile Include="Superhero.cs" />
+	  <Compile Include="Thriller.cs" />
+	  <Compile Include="War.cs" />
+	<Compile Include="Movie.cs" />
     <Compile Include="MovieGenre.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
