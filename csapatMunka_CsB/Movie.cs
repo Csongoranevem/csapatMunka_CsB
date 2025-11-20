@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace csapatMunka_CsB
 {
-    internal class Movie
+    public class Movie
     {
         //movie_name release_date    movie_type director    music_composer money_spent income
 
