@@ -8,13 +8,13 @@ namespace csapatMunka_CsB
 {
 
     public class Thriller : MovieGenre
-    {
+{
         public Thriller(string name, string theme, string tone, string targetAudience)
             : base(name, theme, tone, targetAudience)
-        {
+	{
 
         }
-    }
+	}
 
 
 }
