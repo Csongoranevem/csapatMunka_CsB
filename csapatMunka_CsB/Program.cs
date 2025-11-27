@@ -21,6 +21,15 @@ namespace csapatMunka_CsB
             {
                 if (!Console.KeyAvailable)
                 {
+                    Console.WriteLine("Filmek keresése\n " +
+                        "\tnév alapján: N\n" +
+                        "\trendező alapján: R\n" +
+                        "\tév alapján: E\n" +
+                        "\tMás adattípus alapján: M\n");
+                    Console.WriteLine("Rendező keresése\n" +
+                        "\tfilm alapján alapján: F\n" +
+                        "\tstílus alapján: S\n");
+
                     Console.WriteLine("Új film felvétele: Enter");
                     Console.WriteLine("Kilépés: Q");
                 }
@@ -86,12 +95,17 @@ namespace csapatMunka_CsB
                         string fohos = Console.ReadLine();
                         Console.Write("Add meg a főgonosz nevét: ");
                         string fogonosz = Console.ReadLine();
+
                         Console.Write("Add meg a kaszkadőrmutatványok intenzitási szintjét (1-10): ");
-                        if (!int.TryParse(Console.ReadLine(), out int intenzitas) || intenzitas < 1 || intenzitas > 10)
+
+
+                int intenzitas = 0;
+                        do
                         {
                             Console.WriteLine("Hiba! Kérlek, érvényes számot adj meg 1 és 10 között az intenzitási szinthez.");
-                            return;
                         }
+                        while (!int.TryParse(Console.ReadLine(), out intenzitas) || intenzitas < 1 || intenzitas > 10);
+
                         Action ujAction = new Action(
                             cim,
                             new DateTime(ev, 1, 1),
@@ -114,16 +128,17 @@ namespace csapatMunka_CsB
                         break;
                     case "Adventure":
                         Console.Write("Van kincskeresés a filmben? (igen/nem): ");
-                        string kincskeresesInput = Console.ReadLine().ToLower();
-                        if (!(kincskeresesInput != "igen" || kincskeresesInput != "nem"))
+                       //do while
+
+                        string kincskereses;
+                        do
                         {
-                            bool kincskereses = kincskeresesInput == "igen";
+                            Console.WriteLine("Hiba! Kérlek, érvényes számot adj meg 1 és 10 között az intenzitási szinthez.");
+                            kincskereses = Console.ReadLine().ToLower();
                         }
-                        else
-                        {
-                            Console.WriteLine("Hiba! Kérlek, csak 'igen' vagy 'nem' választ adj meg.");
-                            return;
-                        }
+                        while (kincskereses != "igen" || kincskereses != "nem");
+
+
                         Console.Write("Add meg a főszereplő nevét: ");
                         string foszereplo = Console.ReadLine();
                         Console.Write("Add meg a főellenség nevét: ");
@@ -142,7 +157,7 @@ namespace csapatMunka_CsB
                             "Exploration",
                             "Exciting",
                             "Teens and Adults",
-                            kincskeresesInput == "igen",
+                            kincskereses == "igen",
                             foszereplo,
                             foellenseg
                         );
@@ -235,14 +250,59 @@ namespace csapatMunka_CsB
                             aldozatSzam
                         );
 
-                        break;                        
+                        break;
+                    case "Drama":
+                        /*            string conflictType,
+            string mainProtagonistName,
+            int emotionalIntensityLevel,
+            bool hasTragicEnding*/
+
+                        Console.WriteLine("Add meg a konfliktus típusát: ");
+                        string konfliktusTipus = Console.ReadLine();
+
+                        Console.WriteLine("Add meg a főszereplő nevét: ");
+                        string foSzereploNev = Console.ReadLine();
+
+
+                        string tragikusBefejezes;
+
+                        Console.Write("Tragikus a befejezés?");
+                        do
+                        {
+                            Console.WriteLine("Kérlek, érvényes adatot adj meg!");
+                            tragikusBefejezes = Console.ReadLine().ToLower();
+                        }
+                        while (tragikusBefejezes != "igen" || tragikusBefejezes != "nem");
+
+                        Drama ujDrama = new Drama(
+                            cim,
+                            new DateTime(ev, 1, 1),
+                            mufaj,
+                            rendezo,
+                            zeneszerzo,
+                            koltsegvetes,
+                            bevetel,
+                            "Drama",
+                            "Emotional",
+                            "Serious",
+                            "Adults",
+                            konfliktusTipus,
+                            foSzereploNev,
+                            tragikusBefejezes == "igen"
+                        );
+
+                        Console.WriteLine(
+                            "Új Drama film sikeresen hozzáadva!"
+                        );
+
+                        break;
+
                 }
 
-
             }
-            catch (Exception e)
+            catch (InvalidDataException e)
             {
-                Console.WriteLine("Hiba történt az adatok bevitele során. Kérlek, próbáld újra.\n\n"+ e.ToString()+"\n");
+                Console.WriteLine("Hiba történt az adatok bevitele során (nem megfelelő adatformátum). Kérlek, próbáld újra.\n\n"+ e.ToString()+"\n");
             }
         }
 

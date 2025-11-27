@@ -30,7 +30,6 @@ namespace csapatMunka_CsB
             string targetAudience,
             string conflictType,
             string mainProtagonistName,
-            int emotionalIntensityLevel,
             bool hasTragicEnding
         )
             : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income, genre, theme, tone, targetAudience)
@@ -38,7 +37,6 @@ namespace csapatMunka_CsB
             movie_Type = "drama";
             ConflictType = conflictType;
             MainProtagonistName = mainProtagonistName;
-            EmotionalIntensityLevel = emotionalIntensityLevel;
             HasTragicEnding = hasTragicEnding;
         }
         public override string ToString()
@@ -53,7 +51,6 @@ namespace csapatMunka_CsB
                    $"Income: {Income.ToString("C", us)}, " +
                    $"Conflict Type: {ConflictType}, " +
                    $"Protagonist: {MainProtagonistName}, " +
-                   $"Emotion Level: {EmotionalIntensityLevel}, " +
                    $"Tragic Ending: {HasTragicEnding}";
         }
     }
