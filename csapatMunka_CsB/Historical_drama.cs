@@ -21,7 +21,7 @@ namespace csapatMunka_CsB
             string movie_Type,
             string director,
             string music_Composer,
-            decimal money_Spent,
+            decimal money_Spent, 
             decimal income,
             string genre,
             string theme,
@@ -34,6 +34,7 @@ namespace csapatMunka_CsB
         )
             : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income, genre, theme, tone, targetAudience)
         {
+            movie_Type = "historical_drama";
             HistoricalPeriod = historicalPeriod;
             SettingLocation = settingLocation;
             BasedOnRealPeople = basedOnRealPeople;

@@ -33,7 +33,7 @@ namespace csapatMunka_CsB
         )
             : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income, genre, theme, tone, targetAudience)
         {
-          
+            movie_Type = "action";
             MainHeroName = mainHeroName;
             MainVillainName = mainVillainName;
             StuntIntensityLevel = stuntIntensityLevel;
