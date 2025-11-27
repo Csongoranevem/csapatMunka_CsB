@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 namespace csapatMunka_CsB
 {
     public class Action : MovieGenre
     {
-        // Új action-specifikus mezők
         
         public string MainHeroName { get; set; }
         public string MainVillainName { get; set; }
@@ -20,7 +21,7 @@ namespace csapatMunka_CsB
             string music_Composer,
             decimal money_Spent,
             decimal income,
-            string name,
+            string genre,
             string theme,
             string tone,
             string targetAudience,
@@ -30,13 +31,27 @@ namespace csapatMunka_CsB
             int stuntIntensityLevel
             
         )
-            : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income, name, theme, tone, targetAudience)
+            : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income, genre, theme, tone, targetAudience)
         {
-          
+            movie_Type = "action";
             MainHeroName = mainHeroName;
             MainVillainName = mainVillainName;
             StuntIntensityLevel = stuntIntensityLevel;
             
+        }
+        public override string ToString()
+        {
+            var us = new CultureInfo("en-US");
+
+            return $"{Movie_Name} ({Release_Date.Year}) - {Movie_Type}, " +
+                   $"Directed by {Director}, Music by {Music_Composer}, " +
+                   $"Genre: {Genre}, Theme: {Theme}, Tone: {Tone}, " +
+                   $"Target Audience: {TargetAudience}, " +
+                   $"Budget: {Money_Spent.ToString("C", us)}, " +
+                   $"Income: {Income.ToString("C", us)}, " +
+                   $"Hero: {MainHeroName}, " +
+                   $"Villain: {MainVillainName}, " +
+                   $"Stunt Intensity: {StuntIntensityLevel}";
         }
     }
 }
