@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -33,7 +34,7 @@ namespace csapatMunka_CsB
 
         public override string ToString()
         {
-            return $"{Movie_Name} ({Release_Date.Year}) - {Movie_Type}, Directed by {Director}, Music by {Music_Composer}, Budget: {Money_Spent:C}, Income: {Income:C}";
+            return $"{Movie_Name} ({Release_Date.Year}) - {Movie_Type}, Directed by {Director}, Music by {Music_Composer}, Budget: {Money_Spent.ToString("C0", new CultureInfo("us-US"))}, Income: {Income.ToString("C0", new CultureInfo("us-US"))}";
         }
     }
 }

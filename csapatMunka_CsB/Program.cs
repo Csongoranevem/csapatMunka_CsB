@@ -9,11 +9,10 @@ namespace csapatMunka_CsB
 {
     internal class Program
     {
-
         static List<Movie> movies = new List<Movie>();
-
         static List<MovieGenre> movieGenres = new List<MovieGenre>();
         int v;
+
         static void Main(string[] args)
         {
             FajlBeolvasas();
@@ -25,37 +24,226 @@ namespace csapatMunka_CsB
                     Console.WriteLine("Új film felvétele: Enter");
                     Console.WriteLine("Kilépés: Q");
                 }
-                    
 
-                var input = Console.ReadKey(true);
-                if (input.Key == ConsoleKey.Q)
-                    break;
-
-                UjFelvetel();
+                var key = Console.ReadKey(true).Key;
+                switch (key)
+                {
+                    case ConsoleKey.Enter:
+                        UjFelvetel();
+                        break;
+                    case ConsoleKey.Q:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        Console.WriteLine("Érvénytelen billentyű. Próbáld újra!");
+                        break;
+                }
             }
-
-
-            Console.ReadKey();
-
         }
 
         private static void UjFelvetel()
         {
-            const int minEv = 1895;
-            const int maxEv = 2026;
-            Console.Write("Add meg a film címét: ");
-            string cim = Console.ReadLine();
-            Console.Write("Add meg a megjelenés évét: ");
-            int ev = Convert.ToInt32(Console.ReadLine());
-            while (ev < minEv || ev > maxEv)
+            try
             {
-                Console.WriteLine($"Hiba! Kérlek {minEv} és {maxEv} közötti évet adj meg!");
+                const int minEv = 1900;
+                const int maxEv = 2026;
+                Console.Write("Add meg a film címét: ");
+                string cim = Console.ReadLine();
                 Console.Write("Add meg a megjelenés évét: ");
-                ev = Convert.ToInt32(Console.ReadLine());
-            }
-            Console.Write("Add meg a film műfaját: ");
-            string mufaj = Console.ReadLine();
+                int ev = Convert.ToInt32(Console.ReadLine());
+                while (ev < minEv || ev > maxEv)
+                {
+                    Console.WriteLine($"Hiba! Kérlek {minEv} és {maxEv} közötti évet adj meg!");
+                    Console.Write("Add meg a megjelenés évét: ");
+                    ev = Convert.ToInt32(Console.ReadLine());
+                }
+                Console.Write("Add meg a film műfaját: ");
+                string mufaj = Console.ReadLine();
 
+                Console.Write("Add meg a rendező nevét: ");
+                string rendezo = Console.ReadLine();
+
+                Console.Write("Add meg a zeneszerző nevét: ");
+                string zeneszerzo = Console.ReadLine();
+
+                Console.Write("Add meg a film költségvetését (USD): ");
+                if (!decimal.TryParse(Console.ReadLine(), out decimal koltsegvetes) || koltsegvetes < 0)
+                {
+                    Console.WriteLine("Hiba! Kérlek, érvényes pozitív számot adj meg a költségvetéshez.");
+                    return;
+                }
+
+                Console.Write("Add meg a film bevételét (USD): ");
+                if (!decimal.TryParse(Console.ReadLine(), out decimal bevetel) || bevetel < 0)
+                {
+                    Console.WriteLine("Hiba! Kérlek, érvényes pozitív számot adj meg a bevételhez.");
+                    return;
+                }
+
+                switch (mufaj) {
+                    case "Action":
+                        Console.Write("Add meg a főhős nevét: ");
+                        string fohos = Console.ReadLine();
+                        Console.Write("Add meg a főgonosz nevét: ");
+                        string fogonosz = Console.ReadLine();
+                        Console.Write("Add meg a kaszkadőrmutatványok intenzitási szintjét (1-10): ");
+                        if (!int.TryParse(Console.ReadLine(), out int intenzitas) || intenzitas < 1 || intenzitas > 10)
+                        {
+                            Console.WriteLine("Hiba! Kérlek, érvényes számot adj meg 1 és 10 között az intenzitási szinthez.");
+                            return;
+                        }
+                        Action ujAction = new Action(
+                            cim,
+                            new DateTime(ev, 1, 1),
+                            mufaj,
+                            rendezo,
+                            zeneszerzo,
+                            koltsegvetes,
+                            bevetel,
+                            "Action",
+                            "Heroic",
+                            "Serious",
+                            "General Audience",
+                            fohos,
+                            fogonosz,
+                            intenzitas
+                        );
+                        movieGenres.Add(ujAction);
+                        movies.Add(ujAction);
+                        Console.WriteLine("Új Action film sikeresen hozzáadva!");
+                        break;
+                    case "Adventure":
+                        Console.Write("Van kincskeresés a filmben? (igen/nem): ");
+                        string kincskeresesInput = Console.ReadLine().ToLower();
+                        if (!(kincskeresesInput != "igen" || kincskeresesInput != "nem"))
+                        {
+                            bool kincskereses = kincskeresesInput == "igen";
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hiba! Kérlek, csak 'igen' vagy 'nem' választ adj meg.");
+                            return;
+                        }
+                        Console.Write("Add meg a főszereplő nevét: ");
+                        string foszereplo = Console.ReadLine();
+                        Console.Write("Add meg a főellenség nevét: ");
+                        string foellenseg = Console.ReadLine();
+
+
+                        Adventure ujAdventure = new Adventure(
+                            cim,
+                            new DateTime(ev, 1, 1),
+                            mufaj,
+                            rendezo,
+                            zeneszerzo,
+                            koltsegvetes,
+                            bevetel,
+                            "Adventure",
+                            "Exploration",
+                            "Exciting",
+                            "Teens and Adults",
+                            kincskeresesInput == "igen",
+                            foszereplo,
+                            foellenseg
+                        );
+                        break;
+                    case "Animation":
+                        // Implement Animation specific input and object creation here
+                        /*            
+                        string animationStyle,
+                        string targetAgeGroup,
+                        string studioName,
+                        string mainCharacterName*/
+                        Console.Write("Add meg az animáció stílusát: ");
+                        string animacioStilus = Console.ReadLine();
+
+                        Console.Write("Add meg a célzott korcsoportot: ");
+                        string celzottKorcsoport = Console.ReadLine();
+
+                        Console.Write("Add meg a stúdió nevét: ");
+                        string studioNev = Console.ReadLine();
+
+                        Console.Write("Add meg a fő karakter nevét: ");
+                        string foKarakterNev = Console.ReadLine();
+
+                        Animation ujAnimation = new Animation(
+                            cim,
+                            new DateTime(ev, 1, 1),
+                            mufaj,
+                            rendezo,
+                            zeneszerzo,
+                            koltsegvetes,
+                            bevetel,
+                            "Animation",
+                            "Family",
+                            "Light-hearted",
+                            "Children",
+                            animacioStilus,
+                            celzottKorcsoport,
+                            studioNev,
+                            foKarakterNev
+                        );
+
+                        break;
+                    case "Crime":
+                        /*
+                        string crimeType,
+                        string investigatorName,
+                        bool isBasedOnTrueEvents,
+                        int victimCount*/
+
+                        Console.Write("Add meg a bűncselekmény típusát: ");
+                        string bunCselekmenyTipus = Console.ReadLine();
+
+                        Console.Write("Add meg a nyomozó nevét: ");
+                        string nyomozoNev = Console.ReadLine();
+
+                        Console.Write("Valós eseményeken alapul a film? (igen/nem): ");
+                        string valosEsemeny = Console.ReadLine().ToLower();
+                        if (!(valosEsemeny != "igen" || valosEsemeny != "nem"))
+                        {
+                            bool valos = valosEsemeny == "igen";
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hiba! Kérlek, csak 'igen' vagy 'nem' választ adj meg.");
+                            break;
+                        }
+
+                        Console.Write("Add meg az áldozatok számát: ");
+                        if (!int.TryParse(Console.ReadLine(), out int aldozatSzam) || aldozatSzam < 0)
+                        {
+                            Console.WriteLine("Hiba! Kérlek, érvényes pozitív számot adj meg az áldozatok számához.");
+                            break;
+                        }
+
+                        Crime ujCrime = new Crime(
+                            cim,
+                            new DateTime(ev, 1, 1),
+                            mufaj,
+                            rendezo,
+                            zeneszerzo,
+                            koltsegvetes,
+                            bevetel,
+                            "Crime",
+                            "Mystery",
+                            "Suspenseful",
+                            "Adults",
+                            bunCselekmenyTipus,
+                            nyomozoNev,
+                            valosEsemeny == "igen",
+                            aldozatSzam
+                        );
+
+                        break;                        
+                }
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Hiba történt az adatok bevitele során. Kérlek, próbáld újra.\n\n"+ e.ToString()+"\n");
+            }
         }
 
         private static void FajlBeolvasas()
@@ -68,57 +256,7 @@ namespace csapatMunka_CsB
                 movies.Add(new Movie(adat[0], Convert.ToDateTime(adat[1]), adat[2], adat[3], adat[4], Convert.ToDecimal(adat[5]), Convert.ToDecimal(adat[6])));
 
                 // fill the genres list
-
                 string genre = adat[2];
-                switch (genre)
-                {
-                    case "Action":
-                        //movieGenres.Add(new Action(...));
-                        break;
-                    case "Drama":
-                        //movieGenres.Add(new Drama(...));
-                        break;
-                    case "Comedy":
-                        //movieGenres.Add(new Comedy(...));
-                        break;
-
-                    case "Science Fiction":
-                        //movieGenres.Add(new ScienceFiction(...));
-                        break;
-
-                    case "Horror":
-                        //movieGenres.Add(new Horror(...));
-                        break;
-                    case "Romance":
-                        //movieGenres.Add(new Romance(...));
-                        break;
-                    case "Thriller":
-                        //movieGenres.Add(new Thriller(...));
-                        break;
-                    case "Crime":
-                        //movieGenres.Add(new Crime(...));
-                        break;
-                    case "Fantasy":
-                        //movieGenres.Add(new Fantasy(...));
-                        break;
-                    case "Historical Drama":
-                        //movieGenres.Add(new HistoricalDrama(...));
-                        break;
-                    case "Animation":
-                        //movieGenres.Add(new Animation(...));
-                        break;
-                    case "Superhero":
-                        //movieGenres.Add(new Superhero(...));
-                        break;
-                    case "Musical":
-                        //movieGenres.Add(new Musical(...));
-                        break;
-
-                    default:
-                        break;
-                }
-
-
             }
 
             if (movies.Count >= 0)
@@ -133,10 +271,6 @@ namespace csapatMunka_CsB
             {
                 Console.WriteLine("Hiba a fájl beolvasásakor");
             }
-
-            
-
-
         }
     }
 }
