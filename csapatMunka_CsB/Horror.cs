@@ -1,5 +1,6 @@
 ﻿using System;
-using System;
+using System.Globalization;
+using System.Xml.Linq;
 
 namespace csapatMunka_CsB
 {
@@ -19,7 +20,7 @@ namespace csapatMunka_CsB
             string music_Composer,
             decimal money_Spent,
             decimal income,
-            string name,
+            string genre,
             string theme,
             string tone,
             string targetAudience,
@@ -28,12 +29,27 @@ namespace csapatMunka_CsB
             int killCount,
             string mainAntagonistName
         )
-            : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income, name, theme, tone, targetAudience)
+            : base(movie_Name, release_Date, movie_Type, director, music_Composer, money_Spent, income, genre, theme, tone, targetAudience)
         {
             GoreLevel = goreLevel;
             BasedOnTrueStory = basedOnTrueStory;
             KillCount = killCount;
             MainAntagonistName = mainAntagonistName;
+        }
+        public override string ToString()
+        {
+            var us = new CultureInfo("en-US");
+
+            return $"{Movie_Name} ({Release_Date.Year}) - {Movie_Type}, " +
+                   $"Directed by {Director}, Music by {Music_Composer}, " +
+                   $"Genre: {Genre}, Theme: {Theme}, Tone: {Tone}, " +
+                   $"Target Audience: {TargetAudience}, " +
+                   $"Budget: {Money_Spent.ToString("C", us)}, " +
+                   $"Income: {Income.ToString("C", us)}, " +
+                   $"Gore Level: {GoreLevel}, " +
+                   $"Based on True Story: {BasedOnTrueStory}, " +
+                   $"Kill Count: {KillCount}, " +
+                   $"Main Antagonist: {MainAntagonistName}";
         }
     }
 }
