@@ -53,6 +53,12 @@ namespace csapatMunka_CsB
                    $"Villain: {MainVillainName}, " +
                    $"Stunt Intensity: {StuntIntensityLevel}";
         }
+
+
+        public string ToWrite()
+        {
+            return $"{Movie_Name};{Release_Date.Year};{Movie_Type};{Director};{Music_Composer};{Money_Spent.ToString("C0", new CultureInfo("us-US"))};{Income.ToString("C0", new CultureInfo("us-US"))};{MainHeroName};{MainVillainName};{StuntIntensityLevel}";
+        }
     }
 }
 

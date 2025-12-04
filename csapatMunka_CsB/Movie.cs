@@ -34,7 +34,9 @@ namespace csapatMunka_CsB
 
         public override string ToString()
         {
-            return $"{Movie_Name} ({Release_Date.Year}) - {Movie_Type}, Directed by {Director}, Music by {Music_Composer}, Budget: {Money_Spent.ToString("C0", new CultureInfo("us-US"))}, Income: {Income.ToString("C0", new CultureInfo("us-US"))}";
+            return $"{Movie_Name};{Release_Date.Year};{Movie_Type};{Director};{Music_Composer};{Money_Spent.ToString("C0", new CultureInfo("us-US"))};{Income.ToString("C0", new CultureInfo("us-US"))}";
+
+            //return $"{Movie_Name} ({Release_Date.Year}) - {Movie_Type}, Directed by {Director}, Music by {Music_Composer}, Budget: {Money_Spent.ToString("C0", new CultureInfo("us-US"))}, Income: {Income.ToString("C0", new CultureInfo("us-US"))}";
         }
     }
 }
